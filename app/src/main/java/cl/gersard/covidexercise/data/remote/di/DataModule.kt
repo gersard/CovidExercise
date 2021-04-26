@@ -1,6 +1,8 @@
-package cl.gersard.covidexercise.data.remote
+package cl.gersard.covidexercise.data.remote.di
 
 import cl.gersard.covidexercise.BuildConfig
+import cl.gersard.covidexercise.data.remote.ApiConstants
+import cl.gersard.covidexercise.data.remote.CovidApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
