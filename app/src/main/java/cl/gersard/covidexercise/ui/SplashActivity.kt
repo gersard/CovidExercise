@@ -1,9 +1,9 @@
-package cl.gersard.covidexercise
+package cl.gersard.covidexercise.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
+import cl.gersard.covidexercise.ui.cases.MainActivity
 
 class SplashActivity : AppCompatActivity() {
 

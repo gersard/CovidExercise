@@ -5,6 +5,10 @@ plugins {
     id 'dagger.hilt.android.plugin'
 }
 
+def apikeyPropertiesFile = rootProject.file("secrets.properties")
+def apikeyProperties = new Properties()
+apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
@@ -16,6 +20,8 @@ android {
         versionCode 1
         versionName "1.0"
 
+        buildConfigField("String", "API_KEY", apikeyProperties['API_KEY'])
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -26,13 +32,19 @@ android {
         }
     }
     compileOptions {
+        coreLibraryDesugaringEnabled true
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
+
 
 dependencies {
 
@@ -46,6 +58,7 @@ dependencies {
     // COROUTINES
     def coroutines = '1.4.2'
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines"
 
     // LIFECYCLE
     def lifecycle_version = '2.2.0'

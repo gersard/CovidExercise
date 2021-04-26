@@ -2,12 +2,9 @@ package cl.gersard.covidexercise.core
 
 import androidx.annotation.StringRes
 
-
-sealed class GenericState {
-
-    data class Loading(val isLoading: Boolean) : GenericState()
-    data class Error(@StringRes val errorMessage: Int) : GenericState()
-    data class Success<T>(var data: T) : GenericState()
-
+sealed class GenericState<out T> {
+    data class Success<out T>(val data: T) : GenericState<T>()
+    data class Error(@StringRes var error: Int) : GenericState<Nothing>()
+    data class Loading(var loading: Boolean) : GenericState<Nothing>()
 
 }

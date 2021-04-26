@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_top_title">140dp</dimen>
+    <dimen name="margin_top_cases">32dp</dimen>
+    <dimen name="separation_cases">8dp</dimen>
+    <dimen name="height_image">160dp</dimen>
+</resources>

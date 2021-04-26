@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">CovidExercise</string>
+    <string name="select_date">Seleccionar una fecha</string>
+    <string name="confirmed_cases" >Casos confirmados: %1$s</string>
+    <string name="death_cases" >Cantidad de personas fallecidas: %1$s</string>
+    <string name="unexpected_error">An unexpected error has occurred</string>
+    <string name="date_picker_title">Selecciona una fecha anterior</string>
+    <string name="no_data">---</string>
 </resources>
